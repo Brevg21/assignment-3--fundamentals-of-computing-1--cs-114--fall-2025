@@ -7,20 +7,34 @@ public void constructMatrix(int size){
   matrix = new int[size][size];
   rows = size;
   collums = size;
-
-    for (int row = 0; row < matrix.length; row++) {
-      for (int col = 0; col < matrix[row].length; col++) {
-        matrix[row][col] = 0;
-      }
+  for (int row = 0; row < matrix.length; row++) {
+    for (int col = 0; col < matrix[row].length; col++) {
+      matrix[row][col] = 0;
     }
-    System.out.println("The matrix dimensions are: " + size + "x" + size);
-    System.out.println();
+  }
+  System.out.println("The matrix dimensions are: " + size + "x" + size);
+  System.out.println();
 }
 
 public void printMatrix(){
+  int cols = 1;
+  int rowss = matrix.length -1;
+  final String RESET = "\u001b[0m";
+  final String HIGHLIGHT = "\u001b[33m";
   for (int row = 0; row < matrix.length; row++) {
     for (int col = 0; col < matrix[row].length; col++) {
+      if (col == matrix.length - cols && row == 0){
+        System.out.print(HIGHLIGHT + matrix[row][col] + RESET + "\t");
+        cols++;
+      }
+      else if (col == matrix.length - cols && row == matrix.length - rowss || col == matrix.length - cols && row == matrix.length -rowss){
+        System.out.print(HIGHLIGHT + matrix[row][col] + RESET + "\t");
+        cols++;
+        rowss--;
+      }
+      else{
       System.out.print (matrix[row][col] + "\t");
+      }
     }
 
     System.out.println();
