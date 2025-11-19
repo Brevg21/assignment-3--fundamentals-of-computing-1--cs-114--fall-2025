@@ -22,7 +22,7 @@ public class Matrix {
           System.out.print(HIGHLIGHT + matrix[row][col] + RESET + "\t");
           checkingColumn++;
         }
-        else if (col == matrix.length - checkingColumn && row == matrix.length - checkingRows || col == matrix.length - checkingColumn && row == matrix.length -checkingRows){
+        else if (col == matrix.length - checkingColumn && row == matrix.length - checkingRows){
           System.out.print(HIGHLIGHT + matrix[row][col] + RESET + "\t");
           checkingColumn++;
           checkingRows--;
